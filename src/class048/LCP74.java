@@ -13,6 +13,14 @@ public class LCP74 {
                 ys[k++] = ((long) forceField[i][1] << 1) + forceField[i][2];
                 xs[k] = (long) (forceField[i][0] << 1) - forceField[i][2];
                 ys[k++] = (long) (forceField[i][1] << 1) - forceField[i][2];
+                // 显然下面这样写更好 应该直接使用long进行计算防止溢出
+//                long x = fields[i][0];
+//                long y = fields[i][1];
+//                long r = fields[i][2];
+//                xs[k++] = (x << 1) - r;
+//                xs[k++] = (x << 1) + r;
+//                ys[p++] = (y << 1) - r;
+//                ys[p++] = (y << 1) + r;
             }
             int xsize = sort(xs);
             int ysize = sort(ys);
